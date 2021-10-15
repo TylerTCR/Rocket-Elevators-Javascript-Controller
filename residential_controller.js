@@ -160,7 +160,6 @@ class Column {
     */
     requestElevator(requestedFloor, direction) {
         let chosenElevator = this.findBestElevator(requestedFloor, direction);
-        //console.log(chosenElevator);
         chosenElevator.floorRequestList.push(requestedFloor);
         chosenElevator.move();
         chosenElevator.door.status = "opened";
