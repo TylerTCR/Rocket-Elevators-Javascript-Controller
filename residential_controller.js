@@ -57,6 +57,7 @@ class Elevator {
     requestFloor(requestedFloor) {
         this.floorRequestList.push(requestedFloor);
         this.move();
+        this.door.status = "opened";
     }
 
     move() {
@@ -75,8 +76,6 @@ class Elevator {
                     }
 
                     this.status = "stopped";
-                    this.door.status = "opened";
-                    this.door.status = "closed";
                 // If the elevator's current floor is higher than requested floor
                 } else if (this.currentFloor > element) {
                     this.direction = "down";
@@ -91,8 +90,6 @@ class Elevator {
                     }
 
                     this.status = "stopped";
-                    this.door.status = "opened";
-                    this.door.status = "closed";
                 }
                 // Remove the floor since it's been reached
                 this.floorRequestList.shift();
